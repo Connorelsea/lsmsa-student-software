@@ -34,12 +34,19 @@ const enhancer = compose(
 const store = createStore(reducer, enhancer)
 const history = syncHistoryWithStore(baseHistory, store)
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
+
 ReactDOM.render(
 	<Provider store={store}>
 		<div>
 			<Router history={history}>
 				<Route path="/" component={App}>
 					  <IndexRoute component={Home} />
+						<Route path="login" component={Login} />
 				</Route>
 			</Router>
 		</div>
