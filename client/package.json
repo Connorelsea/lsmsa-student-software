@@ -18,6 +18,7 @@
     "react-router-redux": "^4.0.2",
     "react-tap-event-plugin": "^0.2.2",
     "redux": "^3.4.0",
+    "redux-api-middleware": "^1.0.1",
     "redux-auth-wrapper": "^0.3.0",
     "redux-devtools": "^3.2.0",
     "redux-devtools-dock-monitor": "^1.1.1",

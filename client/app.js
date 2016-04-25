@@ -10,6 +10,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { routerReducer, syncHistoryWithStore, routerActions, routerMiddleware } from 'react-router-redux'
 import { UserAuthWrapper } from 'redux-auth-wrapper'
 
+import { apiMiddleware } from 'redux-api-middleware'
+
 import * as reducers from "./reducers"
 import { App, Home, Foo, Admin, Login } from "./components"
 
@@ -27,7 +29,7 @@ const DevTools = createDevTools(
 )
 
 const enhancer = compose(
-	applyMiddleware(routingMiddleware),
+	applyMiddleware(routingMiddleware, apiMiddleware),
 	DevTools.instrument()
 )
 
